@@ -1,10 +1,10 @@
 // activity-1
-let fName = "Yash";
+let fName = "Satyajeet";
 let lName = "Patil";
 let age = 20;
 let dept = "Ai/ML";
 let div = "b";
-let rollNo = 109;
+let rollNo = 122;
 let grade = "A+";
 let pass = true;
 
