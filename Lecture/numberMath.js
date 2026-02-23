@@ -23,3 +23,4 @@ console.log(Math.max(1,2,3,4,5))
 
 
 //HOME ACTIVITY: learn about math.random
+// -> math.random is a function that provides a random number between 0 and 1.

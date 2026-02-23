@@ -1,0 +1,131 @@
+<!--
+event is an action that happens in the browser  
+ex: clicking button, moving mouse, pressing key,submitting from , loading page>
+javascript can detect  this events and respond to them
+
+types of events: 3 types of events
+a) mouse event(pbl3,click,mouse hover,mouse out) b)keyboard event(key down , key up) c) browser event(load,resize,scroll)
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Events Demo</title>
+
+    <style>
+        body {
+            background-color: #414141;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 15px;
+        }
+
+        img {
+            width: 200px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        img:hover {
+            transform: scale(1.05);
+        }
+
+        a {
+            color: lightblue;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Amazing Images (Click to Remove)</h2>
+
+    <ul id="images">
+        <li>
+            <img id="photoshop"
+                src="https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg"
+                alt="Photoshop Logo">
+        </li>
+
+        <li>
+            <img id="japan"
+                src="https://images.unsplash.com/photo-1501785888041-af3ef285b470"
+                alt="Mount Fuji" onclick="alert('hi')"> <!--mixing both this is a bad practice-->
+                
+        </li>
+
+        <li>
+            <img id="Nature"
+                src="https://images.unsplash.com/photo-1549880338-65ddcdfd017b"
+                alt="Nature Image">
+        </li>
+
+        <li>
+            <img id="photoman"
+                src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"
+                alt="Photographer">
+        </li>
+
+        <li>
+            <img id="tiger"
+                src="https://images.unsplash.com/photo-1546182990-dffeafbe841d"
+                alt="Tiger">
+        </li>
+
+        <li>
+            <a href="https://google.com" id="google">Visit Google</a>
+        </li>
+    </ul>
+  </body>
+  <script>
+    document.getElementById('photoman').onclick=function(){
+        alert('hi')
+    }  <!--this is a good way-->
+    
+    document.getElementById('tiger').addEventListener('click',function(e){
+        console.log(e)
+    })
+    document.getElementById('Nature').addEventListener('click',function(){
+        console.log(`clicking the nature`)  //this is called as event propagation.
+
+    })
+    document.getElementById('photoshop').addEventListener('click',function(){
+        console.log(`clicking inside the ul`)
+
+    },false)
+    document.getElementById('google').addEventListener('click',function(e){
+        console.log("google clicked")
+        e.preventDefault()
+    })
+   
+  </script>
+  </html>
+
+  <!--select element , assign function to click events, then run   this is freshers approach 
+  
+  document.getelementbyId.add
+
+  homeWork: 1.use of jquery 2.time 3.timestamp 4.default prevented 5.target, 6.source element 7.current tag 8.alt key 9.ctrl ket 10.shift key
+
+  use of : addEventListener- it is a js method used to attach an event handler to an html elements so that specific function runs when an event occour
+  
+  Event Propagation: 
+  event bubbling: inner element to the parent and parent to the document,
+
+  because child to parent bubble up, when event capturing true then order becomes parent to child.
+  
+  homework:
+
+  -->

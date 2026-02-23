@@ -1,0 +1,217 @@
+/* RESET  */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0f172a;
+}
+
+.app {
+    width: 90%;
+    max-width: 550px;          /* Increased width */
+    min-height: 400px;         /* Increased height */
+    padding: 30px;
+    text-align: center;
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    background: rgba(0, 0, 0, 0.65);
+    color: white;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 26px;
+    font-weight: 600;
+    text-align: center;
+}
+
+#taskCounter {
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+/* Inputs & Select */
+input,
+select {
+    padding: 8px 10px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background: #1e293b;
+    color: white;
+    font-size: 14px;
+}
+
+#taskInput {
+    flex: 1;
+}
+
+/* Add Button */
+#addTaskBtn {
+    padding: 8px 14px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background: #10b981;
+    color: white;
+    font-weight: bold;
+    transition: 0.2s ease;
+}
+
+#addTaskBtn:hover {
+    background: #059669;
+    transform: scale(1.05);
+}
+
+/* ================= FILTER BUTTONS ================= */
+.filters {
+    margin-bottom: 15px;
+}
+
+.filter {
+    padding: 6px 12px;
+    border-radius: 8px;
+    border: none;
+    margin-right: 6px;
+    cursor: pointer;
+    background: #1e293b;
+    color: white;
+    font-size: 13px;
+    transition: 0.2s;
+}
+
+.filter:hover {
+    background: #334155;
+}
+
+.filter.active {
+    background: #10b981;
+    color: white;
+}
+
+/* ================= TASK LIST ================= */
+ul {
+    list-style: none;
+    max-height: 260px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+/* Scrollbar Styling */
+ul::-webkit-scrollbar {
+    width: 6px;
+}
+
+ul::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 10px;
+}
+
+/* ================= TASK ITEM ================= */
+li {
+    background: #1e293b;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    transition: 0.2s ease;
+}
+
+li:hover {
+    transform: translateY(-2px);
+}
+
+/* Top row inside task */
+.task-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Task text */
+.task-text {
+    font-size: 14px;
+}
+
+/* Completed style */
+.completed .task-text {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+/* Task action buttons */
+.task-actions button {
+    margin-left: 6px;
+    border: none;
+    border-radius: 6px;
+    padding: 4px 7px;
+    cursor: pointer;
+    background: #334155;
+    color: white;
+    font-size: 12px;
+    transition: 0.2s;
+}
+
+.task-actions button:hover {
+    background: #475569;
+}
+
+/* PRIORITY COLORS  */
+.low {
+    border-left: 5px solid #22c55e;
+}
+
+.medium {
+    border-left: 5px solid #facc15;
+}
+
+.high {
+    border-left: 5px solid #ef4444;
+}
+
+small {
+    font-size: 12px;
+    opacity: 0.6;
+}
+
+/* making it responsive */
+@media (max-width: 500px) {
+    .input-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #addTaskBtn {
+        width: 100%;
+    }
+
+    .filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+}
